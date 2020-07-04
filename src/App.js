@@ -1,11 +1,18 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { Router } from 'routes';
+import store from 'store';
 import './App.scss';
+
+console.log(process.env.NODE_ENV);
 
 function App() {
   return (
-    <div className="App">
-      React App
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Router />
+      </div>
+    </Provider>
   );
 }
 
