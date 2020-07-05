@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchGoods } from 'ducks';
 import { Header, Good } from 'components';
+import { useSelector, useDispatch } from "react-redux";
 import './Main.scss'
 
 export default () => {
+  const [isBusy, setBusy] = useState(true);
+  const goodsList = useSelector(state => state.goodsList);
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(fetchGoods())
+      .finally(() => setBusy(false))
+  }, []);
+  
   return (
     <div className="Main">
       <Header />
@@ -22,13 +33,14 @@ export default () => {
               </div>
             </div>
           </nav>
-
+          
           <section className="Main__goods-grid">
-            <Good />
-            <Good />
-            <Good />
-            <Good />
-            <Good />
+            {isBusy && <div>Loading...</div>}
+            {goodsList.map(item =>
+              <Good
+                key={item.id}
+                {...item}
+              />)}
           </section>
         </div>
       </div>

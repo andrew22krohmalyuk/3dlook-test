@@ -30,12 +30,20 @@
     min-width: 50px;
     display: flex;
     align-items: center;
+
+    &--disabled {
+      pointer-events: none;
+    }
   }
 
   &__cart-logo {
     width: 23px;
     height: auto;
     margin-right: 7px;
+
+    &--disabled {
+      opacity: .3;
+    }
   }
 
   &__cart-counter {

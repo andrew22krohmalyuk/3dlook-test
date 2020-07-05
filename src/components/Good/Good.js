@@ -1,16 +1,19 @@
 import React from 'react';
+import { toggleCartList } from 'ducks';
+import { useDispatch } from "react-redux";
 import './Good.scss';
 
-export default () => {
+export default ({ id, type, name, mainImage, slideImages, amount, price }) => {
+  const dispatch = useDispatch();
   return (
-    <section className="Good">
-      <img className="Good__picture" src="/goods/shirt.png" alt="Good"/>
+    <section className="Good" onClick={() => dispatch(toggleCartList({ id, amount: 0 }))}>
+      <img className="Good__picture" src={mainImage} alt="Good"/>
       <article className="Good__info">
         <div className="Good__info-content">
-          <p className="Good__type">РУБАШКИ</p>
-          <h1 className="Good__description">Рубашка с принтом</h1>
-          <p className="Good__price">$170</p>
-          <p className="Good__amount">на складе: 11</p>
+          <p className="Good__type">{type}</p>
+          <h1 className="Good__description">{name}</h1>
+          <p className="Good__price">${price}</p>
+          <p className="Good__amount">на складе: {amount}</p>
         </div>
 
         <div className="Good__info-slider">

@@ -6,8 +6,6 @@ import { Drawer } from 'components';
 import 'assets/styles/reset.css';
 import './App.scss';
 
-console.log(process.env.NODE_ENV);
-
 function App() {
   return (
     <Provider store={store}>

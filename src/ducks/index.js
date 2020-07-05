@@ -1,7 +1,12 @@
+import * as API from 'api';
 const SET_CART_STATE = 'app/SET_CART_STATE';
+const SET_GOOD_LIST = 'app/SET_GOOD_LIST';
+const TOGGLE_CART_LIST = 'app/TOGGLE_CART_LIST';
 
 const initialState = {
-  isOpenCart: !false,
+  isOpenCart: false,
+  goodsList: [],
+  cartList: []
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -11,10 +16,41 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         isOpenCart: action.payload
       };
+      
+    case SET_GOOD_LIST:
+      return {
+        ...state,
+        goodsList: action.payload
+      };
+      
+    case TOGGLE_CART_LIST:
+      return {
+        ...state,
+        cartList: state.cartList.find((item) => item.id === action.payload.id)
+          ? state.cartList.filter(item => item.id !== action.payload.id)
+          : [...state.cartList, action.payload]
+      };
     default: return state;
   }
 }
 
-export function setCartState(payload) {
+export const setCartState = payload => {
   return { type: SET_CART_STATE, payload };
-}
+};
+
+export const toggleCartList = payload => {
+  return { type: TOGGLE_CART_LIST, payload };
+};
+
+export const setGoodList = payload => {
+  return { type: SET_GOOD_LIST, payload };
+};
+
+export const fetchGoods = () => {
+  return (dispatch) => {
+    return API.fetchGoods()
+      .then(({ payload }) => {
+        dispatch(setGoodList(payload));
+      });
+  };
+};
