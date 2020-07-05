@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import cn from 'classnames';
 import { fetchGoods } from 'ducks';
 import { Header, Good } from 'components';
 import { useSelector, useDispatch } from "react-redux";
@@ -6,6 +7,7 @@ import './Main.scss'
 
 export default () => {
   const [isBusy, setBusy] = useState(true);
+  const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const goodsList = useSelector(state => state.goodsList);
   const dispatch = useDispatch();
   
@@ -27,10 +29,18 @@ export default () => {
               <li className="Main__navigation-item">Рубашки</li>
               <li className="Main__navigation-item">Брюки</li>
             </ul>
-            <div className="Main__dropdown">
+            <div className="Main__dropdown" onClick={() => setIsOpenDropdown(!isOpenDropdown)}>
               <div className="Main__dropdown-label">
-                Сортировать
+                <span>Сортировать</span>
+                <img className={cn("Main__dropdown-image", { "Main__dropdown-image--opened": isOpenDropdown })} src="/assets/arrow-up.png"/>
               </div>
+              
+              {isOpenDropdown && <ul className="Main__dropdown-menu">
+                <li className="Main__dropdown-menu-item">От дорогих к дешевым</li>
+                <li className="Main__dropdown-menu-item">От дешевых к дорогим</li>
+                <li className="Main__dropdown-menu-item">Популярные</li>
+                <li className="Main__dropdown-menu-item">Новые</li>
+              </ul>}
             </div>
           </nav>
           
