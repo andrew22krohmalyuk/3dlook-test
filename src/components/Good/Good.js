@@ -6,7 +6,7 @@ import './Good.scss';
 export default ({ id, type, name, mainImage, slideImages, amount, price }) => {
   const dispatch = useDispatch();
   return (
-    <section className="Good" onClick={() => dispatch(toggleCartList({ id, amount: 0 }))}>
+    <section className="Good" onClick={() => dispatch(toggleCartList({ id, amount: 1, price }))}>
       <img className="Good__picture" src={mainImage} alt="Good"/>
       <article className="Good__info">
         <div className="Good__info-content">
