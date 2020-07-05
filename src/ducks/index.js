@@ -2,6 +2,7 @@ import * as API from 'api';
 const SET_CART_STATE = 'app/SET_CART_STATE';
 const SET_GOOD_LIST = 'app/SET_GOOD_LIST';
 const TOGGLE_CART_LIST = 'app/TOGGLE_CART_LIST';
+const SET_GOOD_ITEM_PREVIEW = 'app/SET_GOOD_ITEM_PREVIEW';
 
 const initialState = {
   isOpenCart: false,
@@ -21,6 +22,13 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         goodsList: action.payload
+      };
+      
+    case SET_GOOD_ITEM_PREVIEW:
+      return {
+        ...state,
+        goodsList: state.goodsList.map(item =>
+          item.id === action.payload.id ? { ...item, mainImage: action.payload.mainImage } : item)
       };
       
     case TOGGLE_CART_LIST:
@@ -44,6 +52,10 @@ export const toggleCartList = payload => {
 
 export const setGoodList = payload => {
   return { type: SET_GOOD_LIST, payload };
+};
+
+export const setGoodItemPreview = payload => {
+  return { type: SET_GOOD_ITEM_PREVIEW, payload };
 };
 
 export const fetchGoods = () => {

@@ -18,7 +18,7 @@
 
   &__picture {
     width: 100%;
-    height: auto;
+    height: 480px;
     object-fit: cover;
   }
 
@@ -44,19 +44,51 @@
       left: 0;
       right: 0;
       transition: .2s transform ease-out, .2s opacity ease-out;
-      // transform: translateY(100%);
+      transform: translateY(100%);
     }
 
     &-slider-content {
       flex: 1;
       display: flex;
       justify-content: space-between;
+      padding: 0 10px;
     }
 
     &-slider-content-item {
       width: 40px;
       height: 40px;
-      background: #ccc;
+      object-fit: cover;
+
+      &--active {
+        border: 1px solid #000;
+      }
+    }
+
+    &-slider-button-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 20px;
+
+      &--disabled {
+        pointer-events: none;
+        opacity: .3;
+      }
+    }
+
+    &-slider-button-left, &-slider-button-right {
+      display: inline-block;
+      width: 7px;
+      height: auto;
+    }
+
+    &-slider-button-left {
+      transform: scaleX(-1);
+    }
+
+    &-slider-button-right {
+
     }
   }
 
