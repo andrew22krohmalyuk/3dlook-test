@@ -1,7 +1,7 @@
 const SET_CART_STATE = 'app/SET_CART_STATE';
 
 const initialState = {
-  isOpenCart: false,
+  isOpenCart: !false,
 };
 
 export default function reducer(state = initialState, action = {}) {
