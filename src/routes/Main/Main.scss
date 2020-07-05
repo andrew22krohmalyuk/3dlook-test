@@ -1,0 +1,54 @@
+
+.Main {
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__wrapper {
+    flex: 1;
+    display: flex;
+    max-width: 1200px;
+  }
+
+  &__navigation-wrapper {
+
+  }
+
+  &__navigation-items-wrapper {
+
+  }
+
+  &__navigation-item {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 12px;
+
+    &:not(:last-child) {
+      padding-bottom: 30px;
+    }
+
+    &--bold {
+      font-weight: 500;
+    }
+  }
+
+  &__dropdown {
+    margin-top: 50px;
+  }
+
+  &__dropdown-label {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__goods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+    flex: 1;
+    margin-left: 95px;
+    grid-gap: 30px 70px;
+  }
+}

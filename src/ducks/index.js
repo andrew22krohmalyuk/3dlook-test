@@ -1,20 +1,20 @@
-const SET_USER = 'app/SET_USER';
+const SET_CART_STATE = 'app/SET_CART_STATE';
 
 const initialState = {
-  user: null,
+  isOpenCart: false,
 };
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case SET_USER:
+    case SET_CART_STATE:
       return {
         ...state,
-        user: action.payload
+        isOpenCart: action.payload
       };
     default: return state;
   }
 }
 
-export function setUser(payload) {
-  return { type: SET_USER, payload };
+export function setCartState(payload) {
+  return { type: SET_CART_STATE, payload };
 }

@@ -1,0 +1,33 @@
+.Drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 340px;
+  background: #333;
+  z-index: 3;
+  transform: translateX(100%);
+  transition: .2s transform ease-out;
+
+  &--open {
+    transform: none;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    height: 100%;
+    padding-top: 143px;
+  }
+
+  &__close-wrapper {
+    cursor: pointer;
+    position: absolute;
+    top: 45px;
+    right: 37px;
+  }
+
+  &__drawer-close-icon {
+
+  }
+}
