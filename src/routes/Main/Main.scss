@@ -55,6 +55,7 @@
     font-weight: 300;
     font-size: 14px;
     line-height: 16px;
+    width: 110px;
   }
 
   &__dropdown-menu {
@@ -86,10 +87,23 @@
 
   &__goods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(292px, 292px));
+    grid-template-columns: repeat(auto-fill, 292px);
     flex: 1;
     margin-left: 95px;
-    grid-gap: 30px 70px;
+    grid-gap: 30px 50px;
     padding-bottom: 50px;
+  }
+
+  &__loader-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 95px;
+  }
+
+  &__loader {
+    margin-top: 150px;
+    font-size: 12px;
+    transform: translateX(-200%);
   }
 }
