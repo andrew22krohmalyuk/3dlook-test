@@ -45,8 +45,9 @@ export default ({ id, type, name, mainImage, slideImages, amount, price }) => {
                 onClick={(e) => onClickPreviewImage(e, index, item)}
                 className={
                   cn(
-                    'Good__info-slider-content-item',
-                    { 'Good__info-slider-content-item--active': index === currentIndexPreview })}
+                      'Good__info-slider-content-item',
+                      { 'Good__info-slider-content-item--active': index === currentIndexPreview }
+                    )}
                 src={item}
                 alt="Good"
               />)}

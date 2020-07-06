@@ -103,11 +103,8 @@ export const filterPopular = payload => {
   return { type: FILTER_ONLY_POPULAR, payload };
 };
 
-export const fetchGoods = () => {
-  return (dispatch) => {
-    return API.fetchGoods()
-      .then(({ payload }) => {
-        dispatch(setGoodList(payload));
-      });
-  };
-};
+export const fetchGoods = () => dispatch =>
+  API.fetchGoods()
+    .then(({ payload }) => {
+      dispatch(setGoodList(payload));
+    });

@@ -14,7 +14,7 @@ const GOODS = [
     mainImage: '/goods/shirt.png',
     slideImages: ['/goods/shirt.png', '/goods/shirt1.png', '/goods/shirt2.png', '/goods/shirt3.png', '/goods/shirt4.png'],
     price: 320,
-    amount: 20,
+    amount: 17,
     popularRate: 1,
     date: null,
   },
@@ -31,7 +31,7 @@ const GOODS = [
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/i1-6b2d13c5-afc7-4a77-81f4-ea2d1660172a/%D0%BA%D1%80%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D0%BA%D0%B8-air-max-270-react-2LDsVK.jpg'
     ],
     price: 225,
-    amount: 20,
+    amount: 19,
     popularRate: 2,
     date: null,
   },
@@ -48,7 +48,7 @@ const GOODS = [
       'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5,q_80/8ddc1de4-23d2-4050-ae3f-353a17751bb2/%D0%B4%D0%B6%D0%BE%D0%B3%D0%B3%D0%B5%D1%80%D1%8B-%D0%B8%D0%B7-%D1%82%D0%BA%D0%B0%D0%BD%D0%B8-%D1%84%D1%80%D0%B5%D0%BD%D1%87-%D1%82%D0%B5%D1%80%D1%80%D0%B8-sportswear-t9SC1m.jpg?1'
     ],
     price: 120,
-    amount: 20,
+    amount: 22,
     popularRate: 3,
     date: null,
   },
@@ -65,7 +65,7 @@ const GOODS = [
       'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ntmpfhs4zbgzgayfenxg/%D0%BA%D1%83%D1%80%D1%82%D0%BA%D0%B0-lab-KwCTgT.jpg'
     ],
     price: 135,
-    amount: 20,
+    amount: 4,
     popularRate: 4,
     date: null,
   },

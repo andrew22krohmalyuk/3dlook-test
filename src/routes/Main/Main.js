@@ -48,7 +48,6 @@ export default () => {
                 <li className="Main__dropdown-menu-item" onClick={() => dispatch(sortFromExpensiveToCheap())}>От дорогих к дешевым</li>
                 <li className="Main__dropdown-menu-item" onClick={() => dispatch(sortFromCheapToExpensive())}>От дешевых к дорогим</li>
                 <li className="Main__dropdown-menu-item" onClick={() => dispatch(filterPopular())}>Популярные</li>
-                <li className="Main__dropdown-menu-item">Новые</li>
               </ul>}
             </div>
           </nav>
